@@ -28,10 +28,9 @@ def main(): #defines the main function
     drawRectangle(40,230,460,270,128,128,128) #draws the road as a rectangle stretching from the start to the end and colors it grey
 
     #draws six trees across the scene
-
-    coordinateList = [(125,100),(250,100),(375,100),(125,400),(250,400),(375,400)]
-    for i in range(len(coordinateList)):
-        drawTree(coordinateList[i[0]],coordinateList[i[1]])
+    treeCoordinateList = [[125,100],[250,100],[375,100],[125,400],[250,400],[375,400]] #list of coordinate pairs
+    for i in range(len(treeCoordinateList)): #loop that runs for every element in the coordinate list
+        drawTree(treeCoordinateList[i][0],treeCoordinateList[i][1]) #accesses the first and the second element of each pair, and uses those as coordinates to draw a tree
 
     textLine1 = Text(Point(225,25),50) #locates a question for the user at the top of the screen
     textLine1.setText("Would you like the car to be red or blue (r for red, b for blue)?") #sets the question text, asking the user for input on car color
